@@ -1,0 +1,4 @@
+Flask==2.1.1
+requests==2.27.1
+stem==1.8.0
+colorama==0.4.4
