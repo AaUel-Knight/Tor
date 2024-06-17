@@ -6,96 +6,104 @@
     <title>Tor Search</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #2c3e50, #4ca1af);
-    color: #fff;
-    text-align: center;
-    padding: 50px;
-}
-h1 {
-    font-size: 3em;
-    animation: fadeInDown 1s ease-in-out;
-}
-form {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    animation: fadeInUp 1s ease-in-out;
-}
-input[type="text"], select {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-input[type="text"]:focus, select:focus {
-    transform: scale(1.05);
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-input[type="submit"] {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-input[type="submit"]:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
-}
-select {
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    animation: fadeIn 1s ease-in-out;
-}
-select option {
-    background-color: #fff;
-    color: #000;
-}
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        input[type="text"], select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus, select:focus {
+            transform: scale(1.05);
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        select {
+            background-color: #fff;
+            color: #000;
+            cursor: pointer;
+            animation: fadeIn 1s ease-in-out;
+        }
+        select option {
+            background-color: #fff;
+            color: #000;
+        }
+        img.logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px;
+            height: auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
+    <img src="image.png" alt="Logo" class="logo">
     <h1>Tor Search</h1>
     <form method="post">
         <input type="text" name="query" placeholder="Enter your query" required>
         <select name="url">
+            <!-- Assuming your template engine fills in these options -->
             {% for name, url in onion_urls.items() %}
             <option value="{{ name }}">{{ name }}</option>
             {% endfor %}
